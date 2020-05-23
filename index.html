@@ -121,22 +121,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+		<div id="hexo-helper-live2d">
+			<canvas id="live2dcanvas" width="150" height="300"></canvas>
+		</div>
+		<style>
+			#live2dcanvas{
+			position: fixed;
+			width: 150px;
+			height: 300px;
+			opacity:0.7;
+			right: 0px;
+			z-index: 999;
+			pointer-events: none;
+			bottom: -20px;
+			}
+		</style>
+		<script type="text/javascript" src="/live2d/device.min.js"></script>
 	</body>
-	<div id="hexo-helper-live2d">
-		<canvas id="live2dcanvas" width="150" height="300"></canvas>
-	</div>
-	<style>
-		#live2dcanvas{
-		position: fixed;
-		width: 150px;
-		height: 300px;
-		opacity:0.7;
-		right: 0px;
-		z-index: 999;
-		pointer-events: none;
-		bottom: -20px;
-		}
-	</style>
+
 	
 </html>
