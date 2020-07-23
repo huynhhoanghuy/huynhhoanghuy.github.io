@@ -30,11 +30,11 @@
 						<p>Nice to meet you</p>
 					</header>
 				<!-- Nav -->
-					<nav id="nav">
+					<nav  id="nav">
 						<ul>
-							<li><a onclick="clickAI()" href="#AI" >Artificial Intelligence</a></li>
-							<li><a onclick="clickData()" href="#Data">Data Analyst</a></li>
-							<li><a onclick="clickThesis()" href="#Thesis">Thesis</a></li>
+							<li><a id ="tagAI" onclick="clickAI()"  href="#AI" style = "background-color: #ffffff; box-shadow: none">Artificial Intelligence</a></li>
+							<li><a id ="tagData" onclick="clickData()" href="#Data">Data Analyst</a></li>
+							<li><a id ="tagThesis" onclick="clickThesis()" href="#Thesis">Thesis</a></li>
 						</ul>
 					</nav>
 				<!-- Main -->
@@ -144,23 +144,41 @@
 
 		<!-- Scripts -->
 			<script>
+
+
+			
 			function clickAI() {
 				var x = document.getElementById("AI"); y = document.getElementById("Data"); z = document.getElementById("Thesis");
 				x.style.display = "block";
-				y.style.display = "none"
-				z.style.display = "none"
+				y.style.display = "none";
+				z.style.display = "none";
+				var a = document.getElementById("tagAI"); b = document.getElementById("tagData"); c= document.getElementById("tagThesis");
+				a.style="background-color : #ffffff"
+				b.style="background-color : transparent"
+				c.style="background-color : transparent"
+				
+
 			} 
 			function clickData() {
 				var x = document.getElementById("AI"); y = document.getElementById("Data"); z = document.getElementById("Thesis");
 				y.style.display = "block";
 				x.style.display = "none"
 				z.style.display = "none"
+				var a = document.getElementById("tagAI"); b = document.getElementById("tagData"); c= document.getElementById("tagThesis");
+				b.style="background-color : #ffffff"
+				a.style="background-color : transparent"
+				c.style="background-color : transparent"
 			} 
 			function clickThesis() {
 				var x = document.getElementById("AI"); y = document.getElementById("Data"); z = document.getElementById("Thesis");
 				z.style.display = "block";
 				y.style.display = "none"
 				x.style.display = "none"
+				var a = document.getElementById("tagAI"); b = document.getElementById("tagData"); c= document.getElementById("tagThesis");
+				c.style="background-color : #ffffff"
+				b.style="background-color : transparent"
+				a.style="background-color : transparent"
+
 			} 
 			</script>
 
@@ -170,7 +188,7 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/project.js"></script>
 
 	</body>
 </html>
