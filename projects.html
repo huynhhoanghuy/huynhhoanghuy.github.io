@@ -32,8 +32,9 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#AI" class="active">Artificial Intelligence</a></li>
-							<li><a href="#Data">Data Analyst</a></li>
+							<li><a onclick="clickAI()" href="#AI" class="active">Artificial Intelligence</a></li>
+							<li><a onclick="clickData()" href="#Data">Data Analyst</a></li>
+							<li><a onclick="clickThesis()" href="#Thesis">Thesis</a></li>
 						</ul>
 					</nav>
 				<!-- Main -->
@@ -142,6 +143,27 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+			function clickAI() {
+				var x = document.getElementById("AI"); y = document.getElementById("Data"); z = document.getElementById("Thesis");
+				x.style.display = "block";
+				y.style.display = "none"
+				z.style.display = "none"
+			} 
+			function clickData() {
+				var x = document.getElementById("AI"); y = document.getElementById("Data"); z = document.getElementById("Thesis");
+				y.style.display = "block";
+				x.style.display = "none"
+				z.style.display = "none"
+			} 
+			function clickThesis() {
+				var x = document.getElementById("AI"); y = document.getElementById("Data"); z = document.getElementById("Thesis");
+				z.style.display = "block";
+				y.style.display = "none"
+				x.style.display = "none"
+			} 
+			</script>
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
