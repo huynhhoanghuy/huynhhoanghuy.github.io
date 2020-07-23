@@ -90,9 +90,31 @@
 								<p>Clustering is the grouping of a particular set of objects based on their characteristics, aggregating them according to their similarities.</p>
 								<p style="margin-bottom: 2px;"><u>K-mean</u> is a basic distance-based clustering method.</p>
 								<p>* Example: Give M samples which have N features. Let cluster them into K-cluster. <img style="  display: block;  margin-left: auto;  margin-right: auto; width: 50%;" src="images/Kmean_data.png"></p>
-								<p>The basic idea is  give randomly K point and compute the distance between them and sample points. Then sign sample point's label which has minimun distance in K-cluster into K<sup>th</sup>. Repeat until there is no update.</p>
+								<p>The basic idea is give randomly K point and compute the distance between them and sample points. Then sign sample point's label which has minimun distance in K-cluster into K<sup>th</sup>. Repeat until there is no update.</p>
 								<img style="  display: block;  margin-left: auto;  margin-right: auto; width: 50%;" src="images/Kmean_work.gif">
 								<a href = "https://github.com/huynhhoanghuy/Kmean-data-mining-">Click to see more</a>
+								<p>---</p>
+							</section>
+							<section id="Thesis" class="main">
+								<h2><img style= "width: 3%;"src="images/thesis.jfif"> Medical image inpainting</h2>
+								<h3>This part will mention about some points of my thesis in university. I spent more 6 month to complete it.</h3>
+								<!--Thesis-->
+								<p>My project is reconstruct a medical images which have some missing pixels region. As follows, from an crashed image, I will cluster 2 region: missing and un-missing. Then, my model will reconstruct missing region to reasonable, quilting and color consistency "completed region".</p>
+								<p style="margin-bottom: 2px;"><u>K-mean</u> is a basic distance-based clustering method.</p>
+								<p>* Example: In below, I show 3 pictures which is the input, output, raw image. <img style="  display: block;  margin-left: auto;  margin-right: auto; width: 50%;" src="images/thesis_example.png"></p>
+								<p>The main method is combining Generative Adversarial Networks with contextual attention module (paper based [1]). The Generative Adversarial Networks (be abbreviated as GANs) has 2 stages: Generator and Discriminator.
+								 The generator performs reconstruct processing from image to image through some convolutional and deconvolutional layer. The discriminator will be constraint for generator's output getting better and better: some features will reach to raw's features.</p>
+								<p>Specially, my generator model has 2 sub-networks: coarse and refinement networks. Both networks is autoencoder based model.
+								 Coarse networks use vanilla convolution and dilated convolution to get more important information from local to global. It also help output be more color consistent and quilting.
+								 Then, I use coarse's output to further more global information by find matching score in all region and spread evenly in stage 2. If don't have this stage, model will converge very slow.</p>
+								<p>I will show my demo:</p>
+								
+
+
+
+
+								
+								<small> [1]:https://arxiv.org/abs/1801.07892. </small>
 								<p>---</p>
 							</section>
 
