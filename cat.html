@@ -1,0 +1,260 @@
+<html lang="en" data-n-head="lang" class="wf-mplus1p-n9-inactive wf-inactive">
+
+<head>
+
+    <style type="text/css">
+        .section_loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0
+        }
+        
+        .img-container {
+            display: block;
+            margin: 0 auto;
+            position: fixed;
+            top: calc(50% - 75px);
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%)
+        }
+        
+        .img-container,
+        img {
+            width: 128px;
+            height: 80px
+        }
+        
+        #nuxt-loading {
+            -webkit-animation: opacity 0s ease-in-out;
+            animation: opacity 0s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+            opacity: 0
+        }
+        
+        #nuxt-loading-status {
+            font-weight: 900;
+            top: calc(50% + 27px);
+            width: 100%
+        }
+        
+        #nuxt-loading-status,
+        #root-loading-loading {
+            font-family: sans-serif;
+            text-align: center;
+            color: #161216;
+            position: fixed;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%)
+        }
+        
+        #root-loading-loading {
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-size: 10px;
+            top: 50%
+        }
+        
+        #nuxt-loading-status.errored {
+            color: <%=(options.theme==="dark" ? "#da6371": "#D0021B") %>
+        }
+        
+        @-webkit-keyframes opacity {
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes opacity {
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+    <style type="text/css">
+        .c_main_c,
+        body {
+            overflow: hidden
+        }
+        
+        .c_main_c {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            height: 200vh
+        }
+        
+        .c_main_s {
+            height: 100vh;
+            position: relative;
+            overflow: hidden
+        }
+        
+        .root_container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1
+        }
+        
+        .root_progress {
+            right: 0;
+            width: 10px;
+            position: fixed;
+            top: 0;
+            background-color: #000;
+            height: 100vh;
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+            -webkit-transform-origin: top;
+            transform-origin: top;
+            display: none
+        }
+        
+        .root_wait {
+            -webkit-animation: opacity .3s ease-in-out;
+            animation: opacity .3s ease-in-out;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+            opacity: 0
+        }
+        
+        .container,
+        .container_s {
+            position: relative;
+            margin: 0 auto;
+            min-height: 100vh;
+            overflow: hidden
+        }
+        
+        a {
+            color: #161216
+        }
+        
+        .jp {
+            font-family: M PLUS\ 1p, sans-serif
+        }
+        
+        .en {
+            font-family: Space Grotesk, sans-serif
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: Movement;
+            font-weight: 700;
+            font-variation-settings: "wght" 100
+        }
+        
+        .bold {
+            font-weight: 700
+        }
+        
+        .clk_to_cont {
+            height: 100vh;
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            font-family: Movement;
+            text-align: center;
+            font-weight: 300;
+            font-size: 7vw;
+            -webkit-text-stroke: #fffcfc;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            font-variation-settings: "wght" 100, "SPAC" 120
+        }
+        
+        .clk_to_cont span {
+            display: block;
+            -webkit-transform: translateY(-300%);
+            transform: translateY(-300%)
+        }
+        
+        .section_frame {
+            position: relative;
+            display: block;
+            width: 100%;
+            min-height: 100vh;
+            padding: 6vw;
+            transition: padding .6s cubic-bezier(.23, 1, .32, 1)
+        }
+        
+        @media screen and (max-width:480px) {
+            .js--webgl {
+                width: 84vw;
+                height: 50vh
+            }
+            .section_frame {
+                padding: 8vw
+            }
+            .clk_to_cont {
+                font-size: 55px
+            }
+            .clk_to_cont span {
+                display: block;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%)
+            }
+            .md4 h2 {
+                font-size: 34px
+            }
+        }
+        
+        @media screen and (min-width:481px) and (max-width:1200px) {
+            .section_frame {
+                padding: 6vw
+            }
+        }
+        
+        @media screen and (min-width:1201px) {
+            .section_frame {
+                padding: 8vh
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="__nuxt">
+        <!---->
+        <div id="__layout">
+            <div>
+                <section class="root_container">
+                    <div class="c_main_c">
+                        <div class="c_main_s">
+                            <section class="container">
+                                <div class="scroll_smooth_af">
+                                    <section class="section_loading wait">
+                                        <div class="img-container"><img src="https://renaudrohlinger.com/img/neko.gif" alt="loading"></div>
+                                        <h3 id="root-loading-loading">LOADING SCENE</h3>
+                                        <h3 id="nuxt-loading-status">ちょっと待ってくださ...</h3></section>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
